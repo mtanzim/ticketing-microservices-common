@@ -16,6 +16,7 @@ export const errorHandler = (
   if (err instanceof CustomError) {
     return res.status(err.statusCode).send(err.serializeError());
   }
+  console.error(err);
   const defaultError: ErrorResponse = {
     errors: [
       {
